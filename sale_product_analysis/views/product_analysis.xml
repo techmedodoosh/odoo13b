@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- product.analysis form view -->
+        <record id="product_analysis_view_form" model="ir.ui.view">
+            <field name="name">product.analysis.view.form</field>
+            <field name="model">product.analysis</field>
+            <field name="arch" type="xml">
+                <form string="Análisis de producto">
+                    <sheet>
+                        <widget name="web_ribbon" title="Archivado" bg_color="bg-danger" 
+						    attrs="{'invisible': [('active', '=', True)]}"/>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="active" invisible="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- product.analysis tree view -->
+        <record id="product_analysis_view_tree" model="ir.ui.view">
+            <field name="name">product.analysis.view.tree</field>
+            <field name="model">product.analysis</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- product.analysis search view -->
+        <record id="product_analysis_view_search" model="ir.ui.view">
+            <field name="name">product.analysis.view.search</field>
+            <field name="model">product.analysis</field>
+            <field name="arch" type="xml">
+                <search string="Análisis de productos">
+                    <field name="name"/>
+                    <separator/>
+                    <group>
+                        <filter string="Archivado" name="archived" domain="[('active', '=', False)]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- product.analysis action window -->
+        <record id="product_analysis_action" model="ir.actions.act_window">
+            <field name="name">Datos para análisis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.analysis</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create o_view_nocontent_smiling_face">
+                    Datos para análisis
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem 
+            id="product_analysis_menu_act" 
+            name="Datos para análisis" 
+            parent="sale.menu_sale_config" 
+            action="sale_product_analysis.product_analysis_action" 
+            sequence="20"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_order_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree" />
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="cashbox_id" 
+                        attrs="{'readonly': [('state', 'in', ['sale', 'done'])]}"/>
+                </field>
+            </field>
+        </record>
+
+
+    <!-- sale_cashbox action server -->
+    <record id="print_pdf_report_srv_action" model="ir.actions.server">
+        <field name="name">Resumen PDF</field>
+        <field name="model_id" ref="sale_cashbox.model_sale_cashbox"/>
+        <field name="state">code</field>
+        <field name="sequence">1</field>
+        <field name="binding_model_id" ref="sale_cashbox.model_sale_cashbox"/>
+        <field name="binding_view_types">form</field>
+        <field name="binding_type">report</field>
+        <field name="code">action=records.print_summary_report()</field>
+    </record>
+
+    <!-- sale.cashbox form view -->
+    <record id="sale_cashbox_view_form" model="ir.ui.view">
+        <field name="name">sale.cashbox.view.form</field>
+        <field name="model">sale.cashbox</field>
+        <field name="arch" type="xml">
+            <form string="Sesión de caja">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                    <button string="Abrir caja" name="action_open_cashbox" type="object" 
+                        class="btn-primary" icon="fa-rocket" states="draft"/>
+                    <button string="Cerrar caja" name="action_close_cashbox" type="object" 
+                        confirm="Esta operación será irreversible, ¿Está seguro de continuar?"
+                        class="btn-primary" icon="fa-gear" states="open"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_sale_orders" class="oe_stat_button" icon="fa-pencil" 
+                        attrs="{'invisible':[('state', '=', 'draft')]}">
+                            <field name="sale_order_count" widget="statinfo" string="Pedidos"/>
+                            <field name="sale_order_ids" invisible="1"/>
+                        </button>
+                        <button type="object" name="action_view_invoices" class="oe_stat_button" icon="fa-cash" 
+                        attrs="{'invisible':['|', ('invoices_count', '=', 0), ('state', '=', 'draft')]}">
+                            <field name="invoices_count" widget="statinfo" string="Facturas"/>
+                            <field name="invoice_ids" invisible="1"/>
+                        </button>
+                        <button type="object" name="action_view_payments" class="oe_stat_button" icon="fa-bars" 
+                        attrs="{'invisible':['|', ('payments_count', '=', 0), ('state', '=', 'draft')]}">
+                            <field name="payments_count" widget="statinfo" string="Pagos"/>
+                            <field name="payment_ids" invisible="1"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <span class="o_form_label" attrs="{'invisible': [('state','in',('draft',))]}">Sesión de caja </span>
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="sales_team_id" required="1"/>
+                            <field name="date_open" states="open,close"/>
+                            <field name="date_close" states="close"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': 1}"/>
+                            <field name="company_currency_id" invisible="1"/>
+                            <field name="amount_total"/>
+                        </group>
+                    </group>
+					<group>
+                        <group name="cashbox_closing" string="Montos de Cierre">
+                            <field name="payment_cash"/>
+                            <field name="payment_bcp" />
+                            <field name="payment_izi" />
+                            <field name="payment_yape" />
+                            <field name="payment_intb" />
+                            <field name="payment_plin" />
+                        </group>
+                    </group>
+					<group>
+                        <group name="bank_deposit" string="Depositos en banco">
+                            <field name="bank_deposits"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- sale.cashbox tree view -->
+    <record id="sale_cashbox_view_tree" model="ir.ui.view">
+        <field name="name">sale.cashbox.view.tree</field>
+        <field name="model">sale.cashbox</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'draft'" decoration-muted="state == 'close'">
+                <field name="name"/>
+                <field name="sales_team_id"/>
+                <field name="date_open"/>
+                <field name="date_close"/>
+                <field name="amount_total"/>
+                <field name="state"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="company_currency_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- sale.cashbox search view -->
+    <record id="sale_cashbox_view_search" model="ir.ui.view">
+        <field name="name">sale.cashbox.view.search</field>
+        <field name="model">sale.cashbox</field>
+        <field name="arch" type="xml">
+            <search string="Sesiones de caja">
+                <field name="name"/>
+                <filter string="Pendientes" name="pending" domain="[('state', 'in', ['draft', 'open'])]"/>
+                <separator/>
+                <group>
+                    <filter string="Estado" name="gb_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- sale.cashbox action window -->
+    <record id="sale_cashbox_action" model="ir.actions.act_window">
+        <field name="name">Sesión - arqueo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.cashbox</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create o_view_nocontent_smiling_face">
+                Cree su primera sesión de arqueo de caja.
+            </p><p>
+                Los arqueos creados y abiertos pordrán ser usados por los pedidos de venta.
+            </p>
+        </field>
+    </record>
+
+        <menuitem
+            id="menu_sale_cashbox"
+            action="sale_cashbox_action"
+            parent="sale.sale_order_menu" sequence="20"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="res_partner_form__view_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet" position="before">      
+                <header>
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="habido,nhabido" readonly="0"/>
+                </header>
+                <field name="alert_warning_vat" invisible="1"/>
+                <div class="alert alert-warning" role="alert" attrs="{'invisible': [('alert_warning_vat', '=', False)]}">
+                    <span><strong>NO CONNECTION OR THE DATA DOES NOT EXIST, PLEASE REGISTER THE DATA MANUALLY.</strong></span>
+                </div>
+            </xpath>
+            <div class="o_row" position="before">
+                <div class="o_row"> 
+                    <field name="commercial_name" placeholder="Commercial Name" attrs="{'invisible': [('is_company','=',False)]}" /> 
+                </div>
+            </div>
+        </field>
+    </record>
+
+    <record id="view_partner_document_query_form" model="ir.ui.view">
+			<field name="name">res.partner.form.inherit.ruc</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="l10n_latam_base.view_partner_latam_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//form/sheet" position="before">
+					<header>
+						<button 
+							string="Consulta DNI-RUC" 
+							name="l10n_pe_action_query_document_from_ruc_dot_com" 
+							type="object" class="oe_highlight"
+							attrs="{'invisible':[('l10n_latam_identification_type_id', '=', False)]}"/>
+					</header>
+				</xpath>
+			</field>
+		</record>
+</odoo>

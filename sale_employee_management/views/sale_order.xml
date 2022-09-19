@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="sale_order_view_form" model="ir.ui.view">
+        <field name="name">sale_automatic_payment.sale_order.view_form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="search_code_partner" 
+                    attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"/>
+                <field name="search_code_partner_msg" nolabel="1" style="color:Red;font-weight:bold;"
+                    attrs="{'invisible': ['|', ('search_code_partner_msg', 'in', ['', False]), ('state', 'not in', ['draft', 'sent'])]}"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_shipping_id']" position="after">
+                <field name="search_code_employee" password="1" 
+                    attrs="{'invisible': [('state', 'not in', ['draft', 'sent'])]}"/>
+                <field name="l10n_pe_employee_id" 
+                    attrs="{'readonly': [('state', 'not in', ['draft', 'sent'])]}"/>
+                <field name="search_code_employee_msg" nolabel="1" style="color:Red;font-weight:bold;"
+                    attrs="{'invisible': ['|', ('search_code_employee_msg', 'in', ['', False]), ('state', 'not in', ['draft', 'sent'])]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

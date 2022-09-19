@@ -1,0 +1,2714 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pe_edi_odoofact
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-10 17:08+0000\n"
+"PO-Revision-Date: 2021-05-10 17:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_pe_edi_odoofact
+#: model:mail.template,subject:l10n_pe_edi_odoofact.email_template_edi_invoice
+msgid ""
+"${object.l10n_latam_document_type_id.name} ${object.name or 'n/a'} | "
+"${object.company_id.name} "
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid "%(words)s WITH %(amount)02d/100 %(currency_label)s"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid ", visit"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:mail.template,body_html:l10n_pe_edi_odoofact.email_template_edi_invoice
+msgid ""
+"<div class=\"o_layout o_default_theme\">\n"
+"                    <table class=\"o_mail_wrapper\">\n"
+"                        <tbody>\n"
+"                        <tr>\n"
+"                            <td class=\"o_mail_no_options o_mail_wrapper_td oe_structure\">\n"
+"                                <div class=\"o_mail_block_title_sub\" data-snippet=\"s_mail_block_title_sub\" data-name=\"Title - Subtitle\">\n"
+"                                    <div class=\"o_mail_snippet_general\">\n"
+"                                    <table align=\"center\" cellspacing=\"0\" cellpadding=\"0\" class=\"o_mail_table_styles\">\n"
+"                                        <tbody>\n"
+"                                        <tr>\n"
+"                                            <td class=\"o_mail_h_padding o_mail_v_padding o_mail_no_colorpicker\">\n"
+"                                            <h2 class=\"o_mail_no_margin o_default_snippet_text\">\n"
+"                                                ${object.l10n_latam_document_type_id.name} ${object.name or 'n/a'}\n"
+"                                            </h2>\n"
+"                                            <p class=\"o_mail_no_margin o_default_snippet_text\">\n"
+"                                                Dear\n"
+"                                                % if object.partner_id.parent_id:\n"
+"                                                    ${object.partner_id.name} (${object.partner_id.parent_id.name}),\n"
+"                                                % else:\n"
+"                                                    ${object.partner_id.name},\n"
+"                                                % endif\n"
+"                                             </p>\n"
+"                                             <p>\n"
+"                                                Attached to this message is the \n"
+"                                                % if object.name:\n"
+"                                                    ${object.l10n_latam_document_type_id.name} <strong>${object.name or 'n/a'}</strong>\n"
+"                                                % else:\n"
+"                                                    invoice\n"
+"                                                %endif\n"
+"                                                % if object.invoice_origin:\n"
+"                                                    (with reference: ${object.invoice_origin})\n"
+"                                                % endif\n"
+"                                            </p>\n"
+"                                            <ul>\n"
+"                                                <li>Date: <strong>${object.invoice_date or 'n/a'}</strong></li>\n"
+"                                                <li>Due date: <strong>${object.invoice_date_due or object.invoice_date}</strong></li>\n"
+"                                                <li>Total amount: <strong>${format_amount(object.amount_total, object.currency_id)}</strong></li>\n"
+"                                            </ul>\n"
+"                                            <p>\n"
+"                                                The electronic document in PDF and XML formats is attached to this message. \n"
+"                                                The printed representation in PDF has the same validity as one issued in a traditional way.\n"
+"                                            </p>\n"
+"                                            </td>\n"
+"                                        </tr>\n"
+"                                        </tbody>\n"
+"                                    </table>\n"
+"                                    </div>\n"
+"                                </div>                            \n"
+"                            </td>\n"
+"                        </tr>\n"
+"                        </tbody>\n"
+"                    </table>\n"
+"                </div>   \n"
+"            "
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "<i class=\"fa fa-fw fa-arrow-right\"/>Follow the instructions"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "<i class=\"fa fa-fw fa-arrow-right\"/>Request an account"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid ""
+"<i title=\"Send now\" role=\"img\" aria-label=\"Send now\" class=\"fa fa-fw "
+"fa-cloud-upload\"/>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Activation</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">Send invoices automatically</span>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid ""
+"<span class=\"o_form_label\">Send your electronic invoices by PSE / OSE</span>\n"
+"                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid ""
+"<span class=\"o_stat_text\">Accepted by</span>\n"
+"                                <span class=\"o_stat_text\">SUNAT</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid ""
+"<span class=\"o_stat_text\">Accepted by</span>\n"
+"                        <span class=\"o_stat_text\">SUNAT</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid ""
+"<span class=\"o_stat_text\">Check</span>\n"
+"                                <span class=\"o_stat_text\">Status</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid ""
+"<span class=\"o_stat_text\">Check</span>\n"
+"                        <span class=\"o_stat_text\">Status</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid "<span class=\"o_stat_text\">EDI Request</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid ""
+"<span class=\"o_stat_text\">Send to</span>\n"
+"                                <span class=\"o_stat_text\">SUNAT</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid ""
+"<span class=\"o_stat_text\">Send to</span>\n"
+"                        <span class=\"o_stat_text\">SUNAT</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span><strong>AMOUNT FREE</strong></span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span><strong>BASE AMOUNT </strong></span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span><strong>DISCOUNT (-)</strong></span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span><strong>EXONERATED</strong></span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span><strong>G. DISCOUNT (-)</strong></span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span><strong>UNAFFECTED</strong></span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span>AMOUNT</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span>CODE / DESCRIPTION</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span>DISC.%</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span>P/U</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span>QTY</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span>UOM</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<span>V/U</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<strong>AMOUNT IN WORDS:</strong>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<strong>CLIENT</strong>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "<strong>TOTAL</strong>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "ADDRESS:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__ose_accepted
+msgid "Accepted by PSE/OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_sunat_accepted
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__sunat_accepted
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__sunat_accepted
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_request__state__accepted
+msgid "Accepted by SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_chart_template
+msgid "Account Chart Template"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_invoice_send
+msgid "Account Invoice Send"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_report_l10n_pe_edi_odoofact_report_einvoice
+msgid "Account report with payment lines"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_needaction
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_exception_decoration
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_state
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_debit_note
+msgid "Add Debit Note wizard"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__partner_id
+msgid "Address"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_amount_discount
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_amount_discount
+msgid "Amount discount before taxes"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_amount_free
+msgid "Amount free"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_in_words
+msgid "Amount in Words"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_internal_type
+msgid ""
+"Analog to odoo account.move.type but with more options allowing to identify "
+"the kind of document we are working with. (not only related to account.move,"
+" could be for documents of other models like stock.picking)"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_attachment_count
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__authorization_message
+msgid "Authorization Message"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_latam_document_type__type_of__2
+msgid "BOLETA"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_base
+msgid "Base Amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_documento_que_se_modifica_tipo__b
+msgid "Boleta"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_picking_number__type__2
+msgid "CARRIER REFERRAL GUIDE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__link_cdr
+msgid "CDR link"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "CURRENCY:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/edi_request.py:0
+#, python-format
+msgid ""
+"Can not send the electronic document until you configure your company name, "
+"VAT and the PSE/OSE supplier."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_move_cancel_form
+msgid "Cancel"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.l10n_pe_edi_move_cancel_action
+msgid "Cancel Invoices"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_cancel_reason
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_move_cancel_form
+msgid "Cancel in SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_move_cancel_form
+msgid "Cancel invoices"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_move_cancel_form
+msgid ""
+"Cancel the invoice in SUNAT. <span class=\"font-weight-bold text-danger\"> "
+"The invoice will be sent to SUNAT and canceled. After pressing the button "
+"there is no backward movement.</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid "Cancelled"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_latam_document_type_id
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_journal__l10n_latam_document_type_id
+msgid "Catalog 01: Type of electronic document"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_06_menu
+msgid "Catalog 06 - Tipos de documento de Identidad"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_07_menu
+msgid "Catalog 07 - Tipo de Afectación del IGV"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_08_menu
+msgid "Catalog 08 - Tipos de Sistema de Cálculo del ISC"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_09_menu
+msgid "Catalog 09 - Tipo Nota de Credito"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_reversal_type_id
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_reversal__l10n_pe_edi_reversal_type_id
+msgid "Catalog 09: Type of Credit note"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_10_menu
+msgid "Catalog 10 - Tipo Nota de Debito"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_debit_note__l10n_pe_edi_debit_type_id
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_debit_type_id
+msgid "Catalog 10: Type of Debit note"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_11_menu
+msgid "Catalog 11 - Tipo de Valor de Venta"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_12_menu
+msgid "Catalog 12 - Documentos Relacionados Tributarios"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_14_menu
+msgid "Catalog 14 - Otros Conceptos Tributarios"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_15_menu
+msgid "Catalog 15 - Elementos Adicionales en la Factura Electrónica"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_16_menu
+msgid "Catalog 16 - Tipo de Precio de Venta Unitario"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_17_menu
+msgid "Catalog 17 - Tipo de Operacion"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_18_menu
+msgid "Catalog 18 - Codigos - Modalidad de  Traslado"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_19_menu
+msgid "Catalog 19 - Codigos de Estado de Item"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_20_menu
+msgid "Catalog 20 - Codigos - Motivo de Traslado"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_21_menu
+msgid "Catalog 21 - Documentos Relacionados"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_22_menu
+msgid "Catalog 22 - Codigos- Regimenes de Percepcion"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_23_menu
+msgid "Catalog 23 - Codigos- Regimenes de Retencion"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_24_menu
+msgid "Catalog 24 - Codigos- Recibo Electronico por Servicios Publicos"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_51_menu
+msgid "Catalog 51 - Tipo de Factura"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_52_menu
+msgid "Catalog 52 - Codigos de Leyendas"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_53_menu
+msgid "Catalog 53 - Codigos de Cargos o Descuentos"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_54_menu
+msgid "Catalog 54 - Codigos de Bienes y Servicio Sujetos a Detraccion"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_55_menu
+msgid "Catalog 55 - Codigo de identificacion del Item"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_56_menu
+msgid "Catalog 56 - Codigo de Tipo de Servicio Publico"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_57_menu
+msgid "Catalog 57 - Tipo de Servicio Publicos-Telecomunicaciones"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_catalog_58_menu
+msgid "Catalog 58 - Tipo de Medidor-Recibo de Luz"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.server,name:l10n_pe_edi_odoofact.action_l10n_pe_edi_send_check_multi
+msgid "Check status at SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_tree
+msgid "Check status in SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_latam_debit_sequence
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_journal__l10n_latam_debit_sequence
+msgid ""
+"Check this box if you don't want to share the same sequence for invoices and"
+" debit notes made from this journal"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_pe_edi_contingency
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_journal__l10n_pe_edi_contingency
+msgid "Check this for contingency invoices"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "Choose the period to send invoices"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "Choose your PSE / OSE provider"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__partner_id
+msgid "Client"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__code
+msgid "Code"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__code_of
+msgid "Code by Odoo Fact"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__code
+msgid "Code from SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__l10n_pe_edi_ose_code
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_ose_code
+msgid "Code of PSE / OSE supplier"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_config_settings__l10n_pe_edi_ose_code
+msgid "Code of supplier"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_51_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_51
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_51_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_51_tree
+msgid "Codigo de  Tipo de Factura"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_58_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_58
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_58_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_58_tree
+msgid "Codigo de Tipo de Medidor-Recibo de Luz"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_56_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_56
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_56_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_56_tree
+msgid "Codigo de Tipo de Servicio Publico"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_57_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_57
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_57_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_57_tree
+msgid "Codigo de Tipo de Servicio Publicos-Telecomunicaciones"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_11
+msgid "Codigo de Tipo de Valor de Venta"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_55_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_55
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_55_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_55_tree
+msgid "Codigo de identificacion del Item"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_12_action
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_12_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_12_tree
+msgid "Codigos - Documentos Relacionados Tributarios"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_18_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_18
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_18_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_18_tree
+msgid "Codigos - Modalidad de  Traslado"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_20_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_20
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_20_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_20_tree
+msgid "Codigos - Motivo de Traslado"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_14_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_14
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_14_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_14_tree
+msgid "Codigos - Otros Conceptos Tributarios"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_16_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_16
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_16_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_16_tree
+msgid "Codigos - Tipo de Precio de Venta Unitario"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_12
+msgid "Codigos -Documentos Relacionados Tributarios"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_17_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_17
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_17_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_17_tree
+msgid "Codigos -Tipo de Operacion"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_54_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_54
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_54_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_54_tree
+msgid "Codigos de Bienes y Servicio Sujetos a Detraccion"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_53_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_53
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_53_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_53_tree
+msgid "Codigos de Cargos o Descuentos"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_19_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_19
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_19_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_19_tree
+msgid "Codigos de Estado de Item"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_52_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_52
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_52_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_52_tree
+msgid "Codigos de Leyendas"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_07
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_08
+msgid "Codigos de Tipo de Afectacion del IGV"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_09_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_09
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_09_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_10_form
+msgid "Codigos de Tipo de Nota de Credito Electronica"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_10_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_10
+msgid "Codigos de Tipo de Nota de Debito Electronica"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_11_action
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_11_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_11_tree
+msgid "Codigos de Tipo de Valor de Venta"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_24_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_24
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_24_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_24_tree
+msgid "Codigos- Recibo Electronico por Servicios Publicos"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_22_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_22
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_22_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_22_tree
+msgid "Codigos- Regimenes de Percepcion"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_23_action
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_23
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_23_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_23_tree
+msgid "Codigos- Regimenes de Retencion"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_21_action
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_21_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_21_tree
+msgid "Codigos-Documentos Relacionados"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_21
+msgid "Codigos-Documentos Relacionados "
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_15_action
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_15_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_15_tree
+msgid "Codigos-Elementos Adicionales en la Factura Electrónica"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_15
+msgid "Codigos-Elementos Adicionales en la Factura Electrónica "
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__company_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__company_id
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Company"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "Configure Journals for Electronic invoices"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "Configure Shops and Tokens"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid "Congifure company"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_pe_edi_contingency
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_journal__l10n_pe_edi_contingency
+msgid "Contingency"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_move_cancel__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_move_cancel__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_reversal_type_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_reversal__l10n_pe_edi_reversal_type_id
+msgid "Credit note type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid "Credit/Debit note origin data"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_cron_count
+msgid "Cron count available"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid ""
+"Currency '%s, %s' is not available for Electronic invoice. Contact to the "
+"Administrator."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_07_action
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_07_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_07_tree
+msgid "Códigos de Tipo de Afectación del IGV"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_08_action
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_08_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_08_tree
+msgid "Códigos de Tipos de Sistema de Cálculo del ISC"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/__init__.py:0
+#: code:addons/l10n_pe_edi_odoofact/models/chart_template.py:0
+#, python-format
+msgid "DEB"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "DENOMINATION:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "DUE DATE:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__res_company__l10n_pe_edi_send_invoice_interval_unit__daily
+msgid "Daily"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__date
+msgid "Date"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_reversal_date
+msgid "Date of the Credit or debit note"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_latam_debit_sequence_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_journal__l10n_latam_debit_sequence_id
+msgid "Debit Note Entry Sequence"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_latam_debit_sequence_number_next
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_journal__l10n_latam_debit_sequence_number_next
+msgid "Debit Notes Next Number"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/__init__.py:0
+#: code:addons/l10n_pe_edi_odoofact/models/chart_template.py:0
+#, python-format
+msgid "Debit note"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_debit_note__l10n_pe_edi_debit_type_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_debit_type_id
+msgid "Debit note type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_latam_debit_sequence
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_journal__l10n_latam_debit_sequence
+msgid "Dedicated Debit Note Sequence"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_operation_type
+msgid ""
+"Default 1, the others are for very special types of operations, do not "
+"hesitate to consult with us for more information"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__default
+msgid "Default value"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__name
+msgid "Description"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_discount
+msgid "Discount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_move_cancel__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_report_l10n_pe_edi_odoofact_report_einvoice__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid "Document"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Document Date"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_latam_document_type_id
+msgid "Document Type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_reversal_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__document_date
+msgid "Document date"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__link_document
+msgid "Document link"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_reversal_number
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__document_number
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Document number"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_reversal_serie
+msgid "Document serie"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Document type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__type
+msgid "Document ype"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_number
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid "E-invoice Number"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_serie
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid "E-invoice Serie"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_shop_view_form
+msgid "E-invoice configuration"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_request
+msgid "EDI PE Request"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_shop
+msgid "EDI PE Shop"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_picking_number
+msgid "EDI Picking Number"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#: code:addons/l10n_pe_edi_odoofact/models/edi_request.py:0
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+#, python-format
+msgid "EDI Request"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__log_ids
+msgid "EDI log"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__request_id
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_tree
+msgid "EDI request"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__2
+msgid "EXPORTATION"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_form_company_inherited
+msgid "Electronic Invoicing (PE)"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/edi_request.py:0
+#, python-format
+msgid "Electronic document"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_latam_document_type_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_journal__l10n_latam_document_type_id
+msgid "Electronic document type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_catalog_07__type__exonerated
+msgid "Exonerated"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_exonerated
+msgid "Exonerated  Amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_catalog_07__type__exportation
+msgid "Exportation"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid "Extra data"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_latam_document_type__type_of__1
+msgid "FACTURA"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_documento_que_se_modifica_tipo__f
+msgid "Factura"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.l10n_pe_edi_request_invoice_action
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_request_invoice_menu
+msgid "Follow E-Documents"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.actions.act_window,help:l10n_pe_edi_odoofact.l10n_pe_edi_request_invoice_action
+msgid "Follow the Electronic documents"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_follower_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_channel_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_partner_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_free_product
+msgid "Free"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_free
+msgid "Free Amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__6
+msgid "GUIDE INVOICE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_global_discount
+msgid "Global discount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/edi_request.py:0
+#, python-format
+msgid "Go to Companies"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Group By"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__res_company__l10n_pe_edi_send_invoice_interval_unit__hourly
+msgid "Hourly"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:account.tax.group,name:l10n_pe_edi_odoofact.tax_group_icbper
+msgid "ICBPER"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_icbper
+msgid "ICBPER Amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_icbper_amount
+msgid "ICBPER amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_move_cancel__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_report_l10n_pe_edi_odoofact_report_einvoice__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__res_id
+msgid "ID of the target record in the database"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_igv
+msgid "IGV Amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_igv_amount
+msgid "IGV amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__1
+msgid "INTERNAL SALE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__4
+msgid "INTERNAL SALE - ADVANCES"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__11
+msgid "INVOICE - CARRIER GUIDE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__8
+msgid "INVOICE - PROOF OF PERCEPTION"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__10
+msgid "INVOICE - SENDING GUIDE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "INVOICE DATE:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_isc
+msgid "ISC Amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_isc_amount
+msgid "ISC amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__5
+msgid "ITINERANT SALE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_exception_icon
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_exception_icon
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_needaction
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_unread
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_needaction
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_has_error
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_has_sms_error
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_has_error
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid "Information"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_internal_type
+msgid "Internal Type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "Interval"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_send_invoice_interval_unit
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_config_settings__l10n_pe_edi_send_invoice_interval_unit
+msgid "Interval Unit"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__invoice_id
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_request__type__invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid "Invoice <span style='color: #21b799;'>%s-%s</span> nulled by SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__link_document
+msgid "Invoice link"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:mail.template,report_name:l10n_pe_edi_odoofact.email_template_edi_invoice
+msgid ""
+"Invoice_${(object.name or '').replace('/','_')}${object.state == 'draft' and"
+" '_draft' or ''}"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.server,name:l10n_pe_edi_odoofact.ir_cron_send_invoices_ir_actions_server
+#: model:ir.cron,cron_name:l10n_pe_edi_odoofact.ir_cron_send_invoices
+#: model:ir.cron,name:l10n_pe_edi_odoofact.ir_cron_send_invoices
+msgid "Invoices: Send to PSE/OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_pe_edi_is_einvoice
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_journal__l10n_pe_edi_is_einvoice
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_is_einvoice
+msgid "Is E-invoice"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_is_follower
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_free_product
+msgid "Is free product?"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:l10n_pe_edi.supplier,authorization_message:l10n_pe_edi_odoofact.l10n_pe_edi_supplier_nubefact
+#: model_terms:l10n_pe_edi.supplier,authorization_message:l10n_pe_edi_odoofact.l10n_pe_edi_supplier_odoofact
+msgid ""
+"Issued by a SUPPLIER Authorized by SUNAT through Intendance Resolution "
+"Num.034-005-0005315"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid ""
+"It's not possible to cancel a paid invoice. Please add a credit note or "
+"cancel the payments before."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid ""
+"It's not possible to cancel the invoice. Please check the log details \n"
+" Invoice: %s-%s \n"
+" Error: %s"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid "JSON"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__json_response
+msgid "JSON response"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__json_sent
+msgid "JSON sent"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_move
+msgid "Journal Entries"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__journal_ids
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_shop_view_form
+msgid "Journals"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_move_cancel____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_report_l10n_pe_edi_odoofact_report_einvoice____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_move_cancel__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_06__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_08__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_09__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_10__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_11__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_12__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_14__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_16__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_17__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_18__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_19__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_20__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_21__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_23__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_51__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_52__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_53__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_54__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_55__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_56__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_57__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_58__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_move_cancel__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_latam_document_type
+msgid "Latam Document Type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid "Links"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_shop_view_tree
+msgid "List of shops"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_request_log
+msgid "Log response"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_main_attachment_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_has_error
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__model
+msgid "Model Name"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_multishop
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__l10n_pe_edi_multishop
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_multishop
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_config_settings__l10n_pe_edi_multishop
+msgid "Multi-Shop"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__13
+msgid "NATURAL PERSON DEDUCTIBLE EXPENSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__3
+msgid "NON-DOMICILED"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_latam_document_type__type_of__3
+msgid "NOTA DE CREDITO"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_latam_document_type__type_of__4
+msgid "NOTA DE DEBITO"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_request__state__draft
+msgid "New"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_date_deadline
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_summary
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_type_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_send_invoice_next_execution_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_config_settings__l10n_pe_edi_send_invoice_next_execution_date
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_form_company_inherited
+msgid "Next Execution"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "Next Run"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__no_onerosa
+msgid "No onerosa"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Not sent to PSE/OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Not sent to SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__einvoice_sunat_note
+msgid "Notes by SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid "Null document"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_account_move
+msgid "Number"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_needaction_counter
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_cron_count
+msgid ""
+"Number of attempts available for sending electronic invoices by the Cron"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_has_error_counter
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_needaction_counter
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_has_error_counter
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_unread_counter
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "OBSERVATIONS:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_shop_view_form
+msgid "Odoofact"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_tree
+msgid "Open Document"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_tree
+msgid "Open Error details"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__operation_type
+msgid "Operation type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_others
+msgid "Other charges"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "PAYMENT TERMS:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__link_pdf
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__link_pdf
+msgid "PDF link"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_config_settings__l10n_pe_edi_ose_id
+msgid "PSE / OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__l10n_pe_edi_ose_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_ose_id
+msgid "PSE / OSE Supplier"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_invoice_tree
+msgid "PSE/OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_supplier
+msgid "PSE/OSE Supplier"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_request_id
+msgid "PSE/OSE request"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "PURCHASE/SERVICE ORDER:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_igv_percent
+msgid "Percentage IGV"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.res_config_settings_view_form
+msgid "Peruvian Electronic Invoicing"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__name
+msgid "Picking Serial and Number"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__type
+msgid "Picking Type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_picking_number_ids
+msgid "Picking numbers"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid "Please Define the Customer Document Number."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid "Please define Edocument type on this invoice."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid "Please select a PSE/OSE supplier for the company %s"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_price_unit_included
+msgid "Price unit IGV included"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_price_unit_excluded
+msgid "Price unit excluded"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_price_unit_included
+msgid "Price unit with IGV included"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_price_unit_excluded
+msgid "Price unit without taxes"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "Printed representation of the"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_uom_uom
+msgid "Product Unit of Measure"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_product_product__l10n_pe_edi_product_code_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_product_template__l10n_pe_edi_product_code_id
+msgid "Product code SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_service_order
+msgid "Purchase/Service order"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "RELATED DOCUMENT:"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "RUC"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__rate_code
+msgid "Rate code"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_move_cancel__description
+msgid "Reason"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_cancel_reason
+msgid "Reason given by the user to cancel this move"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__res_id
+msgid "Record ID"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__reference
+msgid "Reference"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_response
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__response
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__response
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid "Response"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_user_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_resume_url
+msgid "Resume URL"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/edi_request.py:0
+#, python-format
+msgid ""
+"Review URL settings and token for billing. \n"
+" %s"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/edi_request.py:0
+#, python-format
+msgid "Review URL settings and token for the shop: %s"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/edi_request.py:0
+#, python-format
+msgid ""
+"Review URL settings. \n"
+" %s"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid ""
+"Review the Journal configuration and select a shop: \n"
+" Journal: %s"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__7
+msgid "SALE PILADO RICE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__account_move__l10n_pe_edi_operation_type__12
+msgid "SALES TICKET - PROOF OF PERCEPTION"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_picking_number__type__1
+msgid "SENDER REFERRAL GUIDE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_has_sms_error
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_invoice_tree
+msgid "SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__code
+msgid "SUNAT Code"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__sunat_responsecode
+msgid "SUNAT Response code"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__sunat_soap_error
+msgid "SUNAT SOAP error"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__sunat_description
+msgid "SUNAT error description"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__sunat_note
+msgid "SUNAT note"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Search EDI request"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__journal_ids
+msgid "Select the shop from the journal configuration"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_form_company_inherited
+msgid "Send Invoices"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_send_invoice
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_config_settings__l10n_pe_edi_send_invoice
+msgid "Send Invoices to PSE/OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__send_email
+msgid "Send email automatically when the invoice is sent"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__send_email
+msgid "Send invoice by Email"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_move_cancel
+msgid "Send invoice cancel"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_form_company_inherited
+msgid "Send invoices automatically"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.server,name:l10n_pe_edi_odoofact.ir_cron_send_resume_per_day_ir_actions_server
+#: model:ir.cron,cron_name:l10n_pe_edi_odoofact.ir_cron_send_resume_per_day
+#: model:ir.cron,name:l10n_pe_edi_odoofact.ir_cron_send_resume_per_day
+msgid "Send resume per day"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_tree
+msgid "Send to PSE/OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.server,name:l10n_pe_edi_odoofact.action_l10n_pe_edi_send_multi
+msgid "Send to PSE/OSE/SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_form_company_inherited
+msgid "Send your electronic invoices by PSE / OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_ose_accepted
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__ose_accepted
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_request__state__sent
+msgid "Sent to PSE/OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_24__name
+msgid "Service"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/__init__.py:0
+#: code:addons/l10n_pe_edi_odoofact/models/chart_template.py:0
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_pe_edi_shop_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_journal__l10n_pe_edi_shop_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_shop_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__l10n_pe_edi_shop_id
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_shop_view_form
+#, python-format
+msgid "Shop"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.l10n_pe_edi_shop_action
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_shop_ids
+#: model:ir.ui.menu,name:l10n_pe_edi_odoofact.l10n_pe_edi_shop_list_menu
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_shop_view_search
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_form_company_inherited
+msgid "Shops"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Show all records which has not been accepted by PSE/OSE"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Show all records which has not been accepted by SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__name
+msgid "Sintaxt serial TXXX-XXXX or 0XXX-XXXX"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__state
+msgid "State"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid "States"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_filter
+msgid "Status"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_state
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.l10n_pe_edi_request_view_form
+msgid "Status log"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_subtotal
+msgid "Subtotal"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_price_base
+msgid "Subtotal without discounts"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_22__rate
+msgid "Tasa"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_tax
+msgid "Tax"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_catalog_07__type__taxed
+msgid "Taxed"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_account_tax_template
+msgid "Templates for Taxes"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid ""
+"The company %s is not active for send electronic invoices. Please check the "
+"configuration."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid ""
+"The currency rate should be different to 0.0, Please check the rate at %s"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: code:addons/l10n_pe_edi_odoofact/models/account_move.py:0
+#, python-format
+msgid "The invoice is not a Electronic document"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__authorization_message
+msgid "The message will be printed on the invoice"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_latam_debit_sequence_number_next
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_journal__l10n_latam_debit_sequence_number_next
+msgid "The next sequence number will be used for the next debit note."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_service_order
+msgid "This Purchase/service order will be shown on the electronic invoice"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_bank_statement_import_journal_creation__l10n_latam_debit_sequence_id
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_journal__l10n_latam_debit_sequence_id
+msgid ""
+"This field contains the information related to the numbering of the debit "
+"note entries of this journal."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_09_tree
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_10_tree
+msgid "Tipo de Medio de Pago"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model,name:l10n_pe_edi_odoofact.model_l10n_pe_edi_catalog_06
+msgid "Tipo de documento de Identidad"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_documento_que_se_modifica_tipo
+msgid "Tipo documento que se modifica"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.act_window,name:l10n_pe_edi_odoofact.catalog_06_action
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_06_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.view_catalog_06_tree
+msgid "Tipos de documento de Identidad"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__l10n_pe_edi_ose_token
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_ose_token
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_config_settings__l10n_pe_edi_ose_token
+msgid "Token"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_icbper_amount
+msgid "Total ICBPER amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_igv_amount
+msgid "Total IGV amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_isc_amount
+msgid "Total ISC amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_price_base
+msgid "Total amount without discounts and taxes"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_untaxed
+msgid "Total before taxes"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_untaxed
+msgid "Total before taxes, all discounts included"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_base
+msgid "Total with discounts and before taxes"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_subtotal
+msgid "Total without discounts and taxes"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_operation_type
+msgid "Transaction type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_07__type
+msgid "Type"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_igv_type
+msgid "Type of IGV"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_isc_type
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_tax__l10n_pe_edi_isc_type
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_tax_template__l10n_pe_edi_isc_type
+msgid "Type of ISC"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_latam_document_type__type_of
+msgid "Type of document"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__activity_exception_decoration
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__l10n_pe_edi_ose_url
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__l10n_pe_edi_ose_url
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_config_settings__l10n_pe_edi_ose_url
+msgid "URL"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__resume_url
+msgid "URL for resume documents"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_supplier__control_url
+msgid "URL for searching electronic documents"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields.selection,name:l10n_pe_edi_odoofact.selection__l10n_pe_edi_catalog_07__type__unaffected
+msgid "Unaffected"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_amount_unaffected
+msgid "Unaffected Amount"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_uom_uom__l10n_pe_edi_uom_code_id
+msgid ""
+"Unit code that relates to a product in order to identify what measure unit "
+"it uses"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_uom_uom__l10n_pe_edi_uom_code_id
+msgid "Unit of Measure code SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_unread
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__message_unread_counter
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_latam_document_type__type_of
+msgid ""
+"Used by Odoo Fact. \n"
+"1 = FACTURA \n"
+"2 = BOLETA \n"
+"3 = NOTA DE CRÉDITO \n"
+"4 = NOTA DE DÉBITO \n"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_reversal_number
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move__l10n_pe_edi_reversal_serie
+msgid "Used for Credit and debit note"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_catalog_15__name
+msgid "Value"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.actions.server,name:l10n_pe_edi_odoofact.ir_cron_verify_documents_per_day_ir_actions_server
+#: model:ir.cron,cron_name:l10n_pe_edi_odoofact.ir_cron_verify_documents_per_day
+#: model:ir.cron,name:l10n_pe_edi_odoofact.ir_cron_verify_documents_per_day
+msgid "Verify electronic documents per day"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__website_message_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__website_message_ids
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_l10n_pe_edi_shop__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.actions.act_window,help:l10n_pe_edi_odoofact.l10n_pe_edi_request_invoice_action
+msgid ""
+"When the document is sent to PSE/OSE, you can follow the document status in "
+"SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request__link_xml
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_request_log__link_xml
+msgid "XML link"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,help:l10n_pe_edi_odoofact.field_account_move_line__l10n_pe_edi_amount_free
+msgid "amount calculated if the line id for free product"
+msgstr ""
+
+#. module: l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_odoofact.report_invoice_document
+msgid "on"
+msgstr ""

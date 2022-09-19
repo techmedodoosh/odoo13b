@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>	
+
+	<!-- Tipos de Unidad de Medida Comercial -->
+	<record id="view_catalog_03_tree" model="ir.ui.view">
+		<field name="name">Tipo de Unidad de Medida Comercial</field>
+		<field name="model">l10n_pe_edi.catalog.03</field>
+		<field name="arch" type="xml">
+			<tree string="Tipos de Unidad de Medida Comercial">
+				<field name="code"/>
+				<field name="name"/>
+				<field name="active"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_catalog_03_form" model="ir.ui.view">
+		<field name="name">Tipo de Unidad de Medida Comercial</field>
+		<field name="model">l10n_pe_edi.catalog.03</field>
+		<field name="arch" type="xml">
+			<form string="Tipo de Unidad de Medida Comercial">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+						<field name="active"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="catalog_03_action">
+		<field name="name">Tipo de Unidad de Medida Comercial</field>
+		<field name="res_model">l10n_pe_edi.catalog.03</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- Codigos de Producto SUNAT -->
+	<record id="view_catalog_25_tree" model="ir.ui.view">
+		<field name="name">Codigos - Producto SUNAT</field>
+		<field name="model">l10n_pe_edi.catalog.25</field>            
+		<field name="arch" type="xml">
+			<tree string="Codigos - Producto SUNAT">
+				<field name="code"/>
+				<field name="name"/>
+				<field name="active"/>
+			</tree>
+		</field>
+	</record>        
+	<record id="view_catalog_25_form" model="ir.ui.view">
+		<field name="name">Codigos - Tipo de Precio de Venta Unitario</field>
+		<field name="model">l10n_pe_edi.catalog.25</field>            
+		<field name="arch" type="xml">
+			<form string="Codigos - Producto SUNAT">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+						<field name="active"/>
+					</group>
+				</group>
+			</form>	
+		</field>
+	</record>        
+	<record model="ir.actions.act_window" id="catalog_25_action">
+		<field name="name">Codigos - Producto SUNAT</field>
+		<field name="res_model">l10n_pe_edi.catalog.25</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- Menu -->
+	<menuitem name="Factura Electronica" id="l10n_pe_edi_configuration_menu" parent="account.menu_finance_configuration" sequence="23"/>
+	<menuitem name="Catalog 03 - Tipo de Unidad de Medida Comercial" id="l10n_pe_edi_catalog_03_menu" parent="l10n_pe_edi_configuration_menu" action="catalog_03_action" sequence="3"/>
+	<menuitem name="Catalog 25 - Codigos de Producto SUNAT" id="l10n_pe_edi_catalog_25_menu" parent="l10n_pe_edi_configuration_menu" action="catalog_25_action" sequence="25"/>
+
+</odoo>
