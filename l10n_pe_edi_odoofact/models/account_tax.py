@@ -12,6 +12,11 @@
 from odoo import fields, models
 
 class AccountTax(models.Model):
+    _inherit = "res.currency"
+
+    rounding = fields.Float(string='Rounding Factor', digits=(12, 12), default=0.01)
+
+class AccountTax(models.Model):
     _inherit = "account.tax"
 
     l10n_pe_edi_isc_type = fields.Many2one('l10n_pe_edi.catalog.08', string="Type of ISC")
